@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 foto 1 word</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .foto{
+            width: 350px;
+            height: 350px;
+            margin: 5px;
+            border: solid 7px white;
+        }
+        .scvar{
+            width: 70px;
+            height: 70px;
+            background: white;
+            border-radius: 10px;
+            margin: 5px;
+            color: black;
+            font-size: 40px;
+            font-weight:bold ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .letter{
+             width: 70px;
+            height: 70px;
+            background: grey;
+            border-radius: 10px;
+            margin: 30px 10px 0px 10px;
+            color: white;
+            font-size: 40px;
+            font-weight:bold ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .letters{
+              width: 70px;
+            height: 70px;
+            background: grey;
+            border-radius: 10px;
+            margin: 10px 10px 20px 10px;
+             color: white;
+            font-size: 40px;
+            font-weight:bold ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .line{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        .kartinka{
+            position: fixed;
+            top: 0px;
+            left: calc(50% - 650px);
+            display: none;
+        }
+    </style>
+</head>
+<body bgcolor="black">
+<center>
+    <img class="foto" src="kumys.jpg">
+    <img class="foto" src="reka.jpg"> <br>
+    <img class="foto" src="yurta.jpg">
+    <img class="foto" src="лошадь.jpg">
+</center>
+<div class="row">
+    <div id="1" class="scvar"></div>
+     <div id="2" class="scvar"></div>
+     <div id="3" class="scvar"></div>
+     <div id="4" class="scvar"></div>
+    </div>
+
+<div class="line">
+    <div onclick="letter('Щ')" class="letter">Щ</div>
+     <div onclick="letter('А')" class="letter">А</div>
+     <div onclick="letter('Л')" class="letter">Л</div>
+     <div onclick="letter('Ь')" class="letter">Ь</div>
+    <div onclick="letter('Й')" class="letter">Й</div>
+     <div onclick="letter('Г')" class="letter">Г</div>
+
+    </div>
+<div class="line">
+    <div onclick="letter('С')" class="letters">С</div>
+     <div onclick="letter('И')" class="letters">И</div>
+     <div onclick="letter('Ы')" class="letters">Ы</div>
+     <div onclick="letter('Е')" class="letters">Е</div>
+    <div onclick="letter('О')" class="letters">О</div>
+     <div onclick="letter('Р')" class="letters">Р</div>
+
+    </div>
+<center>
+<img onclick="replay()" style="height: 100px; width: 100px" src="replay_png_1162809.png">
+</center>
+<img id="5" class="kartinka" src="67315864-you-win-vector-congratulation-banner-template-with-lettering-composition-and-speech-bubble.jpg">
+</body>
+<script>
+    function win () {
+        if (document.getElementById("1").innerHTML === 'С'&&
+        document.getElementById("2").innerHTML === 'Е'&&
+        document.getElementById("3").innerHTML === 'Л'&&
+        document.getElementById("4").innerHTML === 'О'){
+            document.getElementById("5").style.display = "block"
+        }
+
+    }
+    xod=0
+    function letter(znak) {
+        xod = xod +1
+        if (xod===1){
+            document.getElementById("1").innerHTML = znak
+        }
+         if (xod===2){
+            document.getElementById("2").innerHTML = znak
+        }
+         if (xod===3){
+            document.getElementById("3").innerHTML = znak
+        }
+         if (xod===4){
+            document.getElementById("4").innerHTML = znak
+        }
+        setInterval(function () {
+            win()
+        },2000)
+
+    }
+    function replay() {
+            xod = 0
+        document.getElementById("1").innerHTML = ''
+         document.getElementById("2").innerHTML = ''
+         document.getElementById("3").innerHTML = ''
+         document.getElementById("4").innerHTML = ''
+    }
+</script>
+</html>
